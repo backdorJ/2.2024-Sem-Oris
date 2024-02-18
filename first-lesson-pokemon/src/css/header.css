@@ -6,8 +6,8 @@
     text-align: center;
     background-image: url('../../public/img/pokeball.png');
     background-size: 400px;
-    background-position-y: -150px;
-    background-position-x: 1730px;
+    background-position-x: 105%;
+    background-position-y: 1250%;
     background-repeat: no-repeat;
     background-blend-mode: overlay;
 }
