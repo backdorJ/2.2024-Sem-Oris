@@ -1,6 +1,7 @@
 import './App.css';
 import {useEffect, useState} from "react";
 import Wrapper from "./Component/Wrapper";
+import Header from "./Component/Header";
 function App()
 {
     const [pokemons, setPokemons] = useState([]);
@@ -39,25 +40,13 @@ function App()
         fetchData();
     }, [pokemons]);
 
+    const handleInputChange = (value) => {
+        setInputData(value)
+    }
+
     return (
         <div className="App">
-            <header className="App-header">
-                <h1 className="App-header__title-name">Who are you looking for?</h1>
-                <div className="App-header__search-wrapper">
-                    <div clasName="App-header__search">
-                        <div className="App-header__form">
-                            <input
-                                className="App-header__input-place"
-                                type="text"
-                                placeholder="E.g. Pikachu"
-                                onChange={(event) => setInputData(event.target.value)}/>
-                            <button
-                                className="App-header__button"
-                                type="submit">Go</button>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Header changeInputData={handleInputChange}/>
             <Wrapper pokemonsData={pokemonsData} filterPoke={inputData}/>
         </div>
     );

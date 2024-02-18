@@ -23,7 +23,7 @@ const Card = ({name, id, btns}) => {
     return (
         <div className="card">
             <div className="card__header">
-                <p className="card__header__name">{name}</p>
+                <p className="card__header__name">{name.charAt(0).toUpperCase() + name.slice(1)}</p>
                 <p className="card__header__number">{`#${id.toString().padStart(3, '0')}`}</p>
             </div>
             <div className="card__body">
@@ -32,9 +32,12 @@ const Card = ({name, id, btns}) => {
             <div className="card__footer">
                 {
                     btns.map(x => {
-                        return <button
+                        return(
+                        <button
                             className="card__footer__btn"
-                            style={{backgroundColor: `${colors.get(x.type.name.toLowerCase())}`}}>{x.type.name}</button>
+                            style={{backgroundColor: `${colors.get(x.type.name.toLowerCase())}`}}>
+                            {x.type.name}
+                        </button>)
                     })
                 }
             </div>

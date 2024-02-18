@@ -1,6 +1,7 @@
 import React from "react";
+import '../css/notFound.css'
 
-const notFound = () => {
+const NotFound = () => {
     return (
         <div className="wrapper__not_found">
             <h2 className="wrapper__not_found_title">Oops! Try again.</h2>
@@ -10,4 +11,4 @@ const notFound = () => {
     )
 }
 
-export default notFound;
+export default NotFound;

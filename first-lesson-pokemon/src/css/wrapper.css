@@ -59,23 +59,3 @@
     cursor: pointer;
     color: white;
 }
-
-.wrapper__not_found_title{
-    text-align: center;
-    margin-bottom: 25px;
-    margin-top: 10px;
-    font-weight: 400;
-}
-
-.wrapper__not_found{
-    text-align: center;
-}
-
-.wrapper_not_found_description{
-    max-width: 250px;
-    margin-bottom: 30px;
-}
-
-.wrapper_not_found_img{
-    width: 200px;
-}

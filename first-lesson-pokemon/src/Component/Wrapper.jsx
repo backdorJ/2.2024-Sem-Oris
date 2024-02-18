@@ -1,5 +1,5 @@
-import '../Wrapper.css';
 import './Card'
+import '../css/wrapper.css'
 import React from "react";
 import Card from "./Card";
 import NotFound from "./NotFound";

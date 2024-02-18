@@ -1,0 +1,106 @@
+
+.header {
+    height: 400px;
+    width: 100%;
+    background-color: #072AC8;
+    text-align: center;
+    background-image: url('../../public/img/pokeball.png');
+    background-size: 400px;
+    background-position-y: -150px;
+    background-position-x: 1730px;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+.header__title-name{
+    margin: 0;
+    padding: 50px 0 0;
+    color: white;
+    font-size: 85px;
+    text-align: center;
+}
+
+.header__search-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.header__search{
+    max-width: 1200px;
+}
+
+.header__form{
+    position: relative;
+}
+
+.header__input-place{
+    width: 500px;
+    background-image: url(../../public/img/search_logo.svg);
+    background-repeat: no-repeat;
+    background-position-y: 3px;
+    height: 40px;
+    border-radius: 30px;
+    outline: none;
+    font-size: 20px;
+    margin-top: 40px;
+    display: inline-flex;
+    padding-left: 40px;
+}
+
+.header__button {
+    position: absolute;
+    height: 39px;
+    bottom: 0;
+    right: 0;
+    width: 72px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+@media  (width: 500px){
+    .App-header__title-name {
+        margin: 0;
+        color: white;
+        font-size: 73px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 668px) {
+    .header {
+        height: 350px;
+        width: 100%;
+        background-color: #072AC8;
+        text-align: center;
+        background-image: url('../../public/img/pokeball.png');
+        background-size: 400px;
+        background-position-y: -150px;
+        background-position-x: 1730px;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+    }
+
+    .header__title-name{
+        margin: 0;
+        padding: 50px 0 0;
+        color: white;
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .header__input-place{
+        width: 300px;
+        background-image: url(../../public/img/search_logo.svg);
+        background-repeat: no-repeat;
+        background-position-y: 3px;
+        height: 40px;
+        border-radius: 30px;
+        outline: none;
+        font-size: 20px;
+        margin-top: 40px;
+        display: inline-flex;
+        padding-left: 40px;
+    }
+}
