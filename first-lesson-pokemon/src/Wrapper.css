@@ -1,0 +1,81 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card  {
+    min-width: 250px;
+    max-width: 250px;
+    border: 1px solid rgb(128, 128, 128);
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.card__header__name{
+    color: #3148C8;
+    font-weight: 500;
+}
+
+.card__header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__body{
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__body__image{
+    max-width: 120px;
+    max-height: 120px;
+}
+
+.card__footer{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.card__footer__btn{
+    border-radius: 5px;
+    width: 75px;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.wrapper__not_found_title{
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+.wrapper__not_found{
+    text-align: center;
+}
+
+.wrapper_not_found_description{
+    max-width: 250px;
+    margin-bottom: 30px;
+}
+
+.wrapper_not_found_img{
+    width: 200px;
+}
