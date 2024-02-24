@@ -1,0 +1,323 @@
+.header {
+    position: relative;
+    min-height: 200px;
+    width: 100%;
+    background-color: #072AC8;
+    text-align: center;
+    background-image: url('../../../../public/img/pokeball.png');
+    background-size: 200px;
+    background-position-x: 105%;
+    background-position-y: 1250%;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+}
+
+.header img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 150px;
+}
+
+.header__wrapper{
+    max-width: 500px;
+    margin: auto;
+}
+
+.card{
+    margin-top: 50px;
+    min-width: 500px;
+    border-radius: 16px;
+    padding: 10px 30px;
+    box-shadow: 6px 2px 39px 13px rgba(0, 0, 0, 0.2);
+}
+
+.card__header{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.card__header__title{
+
+}
+
+.card__header__title p{
+    color: blue;
+    font-weight: 500;
+}
+
+.card__header__title__btns{
+    border-radius: 5px;
+    width: 75px;
+    border: none;
+    margin-right: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.card__body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__body_statistics{
+
+}
+
+.card__body_statistics {
+}
+
+.card__body__image{
+
+}
+
+.card__body__image img {
+    min-width: 200px;
+}
+
+.card__body__progress__green{
+    background-color: #E5F5ED;
+    border-radius: 4px;
+    width: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card__body__progress__attack{
+    background-color: #F7DFDC;
+    border-radius: 4px;
+    width: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card__body__progress__defense{
+    background-color: #FEF6E7;
+    border-radius: 4px;
+    width: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card__body__progress__speed{
+    background-color: #FDE9DB;
+    border-radius: 4px;
+    width: 200px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.card__body__progress_bar{
+    width: 0;
+    height: 5px;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.card__footer{
+    min-height: 50px;
+}
+
+.card__breeding{
+    margin-top: 30px;
+    min-width: 500px;
+    border-radius: 16px;
+    padding: 10px 30px;
+    box-shadow: 6px 2px 39px 13px rgba(0, 0, 0, 0.2);
+}
+
+.card__breeding__title{
+    padding-top: 20px;
+}
+
+.card__breeding__title p {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.card__breeding__stat{
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.card__breeding__stat__height{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card__breeding__stat__height h5{
+    font-size: 14px;
+    align-items: center;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.card__breeding__stat__height__table{
+    min-width: 150px;
+    padding: 5px 25px;
+    display: inline-flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    background-color: #F8F9FA;
+    border: 1px solid #c6c6c6;
+}
+
+.card__breeding__stat__height__table p {
+    font-size: 14px;
+}
+
+.card__movies{
+    margin-top: 30px;
+    min-width: 500px;
+    border-radius: 16px;
+    padding: 10px 30px;
+    box-shadow: 6px 2px 39px 13px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+.card__movies__title{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card__movies__blocks{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    max-width: 450px;
+    margin-bottom: 30px;
+}
+
+.card__movies__block{
+    width: 120px;
+    height: 90px;
+    margin-bottom: 10px;
+    background-color: green;
+    border-radius: 20px;
+    margin-right: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__movies__block__title{
+    font-size: 14px;
+    color: #f0f0f0;
+    font-weight: 300;
+}
+
+.card__abilities{
+    margin-top: 30px;
+    min-width: 500px;
+    border-radius: 16px;
+    padding: 10px 30px;
+    box-shadow: 6px 2px 39px 13px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+}
+
+.card__abilities__title{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card__abilities__title p {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.card__abilities__blocks{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card__abilities__block{
+    width: 180px;
+    height: 90px;
+    background-color: #FDD85D;
+    border-radius: 14px;
+}
+
+.card__abilities__block_2{
+    width: 180px;
+    height: 90px;
+    background-color: #FF844F;
+    border-radius: 14px;
+}
+
+.card__abilities__wrapper__img{
+    display: flex;
+    justify-content: center;
+}
+
+.card__abilities__img{
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 30px;
+    max-height: 30px;
+    margin-top: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card__abilities__block_title{
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: 400;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        min-height: 150px;
+        background-position-x: 111%;
+        background-position-y: -64%;
+        background-size: 100px;
+    }
+
+    .header img {
+        max-width: 100px;
+    }
+
+    .card {
+        min-width: 300px;
+    }
+
+    .card__breeding,
+    .card__movies,
+    .card__abilities {
+        min-width: 300px;
+    }
+
+    .card__abilities__block{
+        width: 150px;
+        height: 80px;
+        background-color: #FDD85D;
+        border-radius: 14px;
+    }
+
+    .card__abilities__block_2{
+        width: 150px;
+        height: 80px;
+        background-color: #FF844F;
+        border-radius: 14px;
+    }
+}
