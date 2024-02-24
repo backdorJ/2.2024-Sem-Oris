@@ -21,13 +21,15 @@ const MainPage = () => {
         threshold: 0.5,
     });
 
+    console.log(inView)
+
     const [isLoadingAfterPokeData, fetchingPokeData] = useFetchingPoke(async () => {
         const promises = pokemons.map(async (item, index) => {
             const response = await fetch(item.url);
             return response.json();
         });
         const newData = await Promise.all(promises);
-        setPokemonsData(prev => [...prev, ...newData]);
+        setPokemonsData([...pokemonsData, ...newData]);
         console.log(`INNER poke data FETCHING FIRST: ${pokemonsData}`)
         console.log(pokemonsData)
     });
@@ -45,10 +47,12 @@ const MainPage = () => {
     }, [inView]);
 
     useEffect(() => {
-        if (pokemons && inView) {
+        if (pokemons && inView && inputData === '') {
             fetchingPokeData();
         }
     }, [pokemons]);
+
+    console.log(pokemonsData)
 
     return (
         <div>
@@ -57,7 +61,7 @@ const MainPage = () => {
             {
                 isLoadingAfterPokeData && <Loader />
             }
-            <div ref={ref}></div>
+            <div style={{backgroundColor: "red"}} ref={ref}></div>
         </div>
     );
 };

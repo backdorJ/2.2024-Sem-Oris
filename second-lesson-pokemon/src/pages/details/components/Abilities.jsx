@@ -18,16 +18,19 @@ const Abilities = ({abilities}) => {
                         <p>{abilities[0]?.ability?.name.charAt(0).toUpperCase() + abilities[0]?.ability?.name.slice(1)}</p>
                     </div>
                 </div>
-                <div className={classes.card__abilities__block_2}>
-                    <div className={classes.card__abilities__wrapper__img}>
-                        <div className={classes.card__abilities__img}>
-                            <span style={{color: "#FF844F", fontWeight: 400}}>{abilities[1]?.ability?.name.charAt(0).toUpperCase()}</span>
+                {
+                    abilities[1]?.ability?.name &&
+                    <div className={classes.card__abilities__block_2}>
+                        <div className={classes.card__abilities__wrapper__img}>
+                            <div className={classes.card__abilities__img}>
+                                <span style={{color: "#FF844F", fontWeight: 400}}>{abilities[1]?.ability?.name.charAt(0).toUpperCase()}</span>
+                            </div>
+                        </div>
+                        <div className={classes.card__abilities__block_title}>
+                            <p>{abilities[1]?.ability?.name.charAt(0).toUpperCase() + abilities[1]?.ability?.name.slice(1)}</p>
                         </div>
                     </div>
-                    <div className={classes.card__abilities__block_title}>
-                        <p>{abilities[1]?.ability?.name.charAt(0).toUpperCase() + abilities[1]?.ability?.name.slice(1)}</p>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     );
