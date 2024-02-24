@@ -4,7 +4,7 @@ import React from "react";
 import Card from "./Card";
 import NotFound from "./NotFound";
 
-const Wrapper = ({pokemonsData, filterPoke, ref}) => {
+const Wrapper = ({pokemonsData, filterPoke}) => {
     let filteredData = pokemonsData
         .filter((item) =>
             item.species.name.includes(filterPoke)
