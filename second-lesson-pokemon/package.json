@@ -1,7 +1,7 @@
 {
   "name": "first-lesson-pokemon",
   "version": "0.1.0",
-  "homepage": "https://backdorJ.github.io/2.2024-Sem-Oris",
+  "homepage": "https://backdorJ.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
