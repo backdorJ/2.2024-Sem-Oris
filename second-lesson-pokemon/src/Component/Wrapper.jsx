@@ -19,14 +19,14 @@ const Wrapper = ({pokemonsData, filterPoke}) => {
     return (
         <div className="wrapper">
             {
-                filteredData.map((item, index) => {
+                filteredData.map((item, _) => {
                     {
-                            return <Card
-                                img={item.sprites.front_default}
-                                key={item.id}
-                                name={item.species.name}
-                                id={item.id}
-                                btns={item.types}/>
+                        return <Card
+                            img={item.sprites.front_default}
+                            key={item.id}
+                            name={item.species.name}
+                            id={item.id}
+                            btns={item.types}/>
                     }
                 })
             }
