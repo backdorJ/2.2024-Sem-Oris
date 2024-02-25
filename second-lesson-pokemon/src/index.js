@@ -7,7 +7,7 @@ import CardInfo from "./pages/details/components/CardInfo";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
         <Routes>
             <Route path="/" element={<App />} />
             <Route path="/poke-info/:name" element={<CardInfo />} />
