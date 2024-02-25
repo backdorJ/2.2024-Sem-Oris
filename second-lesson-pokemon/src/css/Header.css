@@ -59,59 +59,28 @@
     color: white;
 }
 
-@media  (width: 500px){
-    .App-header__title-name {
-        margin: 0;
-        color: white;
-        font-size: 73px;
-        text-align: center;
-    }
-}
-
-@media (min-width: 375px) and (max-width: 668px) {
-    .header {
-        height: 350px;
-        width: 100%;
-        background-color: #072AC8;
-        text-align: center;
-        background-image: url('../../public/img/pokeball.png');
-        background-size: 400px;
-        background-position-y: -150px;
-        background-position-x: 1730px;
-        background-repeat: no-repeat;
-        background-blend-mode: overlay;
-    }
-
+@media only screen and (max-width: 690px)  {
     .header__title-name{
-        margin: 0;
-        padding: 50px 0 0;
-        color: white;
-        font-size: 60px;
-        text-align: center;
+        display: flex;
     }
 
     .header__input-place{
-        width: 300px;
-        background-image: url(../../public/img/search_logo.svg);
-        background-repeat: no-repeat;
-        background-position-y: 3px;
-        height: 40px;
-        border-radius: 30px;
-        outline: none;
-        font-size: 20px;
-        margin-top: 40px;
-        display: inline-flex;
-        padding-left: 40px;
+        max-width: 100%;
     }
-}
+
+    .header__search{
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__form{
+        margin-bottom: 10px;
+    }
 
 
-@media only screen and (max-width: 700px)  {
-    .header__title-name{
-        margin: 0;
-        color: white;
-        font-size: 30px;
-        text-align: center;
+    .header__input-place{
+        max-height: 40%;
+        max-width: 300px;
     }
 
     .header {
@@ -121,20 +90,10 @@
         text-align: center;
         background-image: url('../../public/img/pokeball.png');
         background-size: 200px;
-        background-position-x: 131%;
-        background-position-y: 286%;
+        background-position-x: 138%;
+        background-position-y: -241%;
         background-repeat: no-repeat;
         background-blend-mode: overlay;
     }
-
-    .header__form{
-        display: flex;
-        margin-bottom: 30px;
-    }
-
-    .header__search-wrapper{
-        margin-bottom: 30px;
-        display: flex;
-        justify-content: center;
-    }
 }
+
