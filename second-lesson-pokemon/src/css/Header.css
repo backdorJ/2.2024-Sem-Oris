@@ -106,24 +106,35 @@
 }
 
 
-@media only screen and (max-width: 500px)  {
+@media only screen and (max-width: 700px)  {
     .header__title-name{
         margin: 0;
         color: white;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
     }
 
     .header {
-        height: 300px;
+        height: 30%;
         width: 100%;
         background-color: #072AC8;
         text-align: center;
         background-image: url('../../public/img/pokeball.png');
         background-size: 200px;
-        background-position-x: 111%;
-        background-position-y: -64%;
+        background-position-x: 131%;
+        background-position-y: 286%;
         background-repeat: no-repeat;
         background-blend-mode: overlay;
+    }
+
+    .header__form{
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .header__search-wrapper{
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
     }
 }

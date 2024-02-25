@@ -11,7 +11,6 @@ const Wrapper = ({pokemonsData, filterPoke}) => {
             || item.id === filterPoke
             || item.species.name === filterPoke);
 
-    console.log(filteredData)
 
     if (filteredData.length === 0)
         return <NotFound />

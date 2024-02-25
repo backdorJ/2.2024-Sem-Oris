@@ -42,7 +42,6 @@ const MainPage = () => {
     }, [])
 
     useEffect(() => {
-        console.log(`first ${offset} next: ${offset + 20}`)
         if (inView && pokemonsData && (offset <= maxCountPoke) && inputData === '') {
             fetching()
             setOffset(offset + 20)
@@ -62,7 +61,7 @@ const MainPage = () => {
             {
                 isLoadingAfterPokeData && <Loader />
             }
-            <div ref={ref}>End</div>
+            <div className="end__for__pagination" ref={ref}>End</div>
         </div>
     );
 };
