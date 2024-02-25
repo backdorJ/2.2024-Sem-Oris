@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/2.2024-Sem-Oris/static/css/main.4b628014.css",
-    "main.js": "/2.2024-Sem-Oris/static/js/main.8f434f3a.js",
+    "main.css": "/2.2024-Sem-Oris/static/css/main.a1ff3de6.css",
+    "main.js": "/2.2024-Sem-Oris/static/js/main.5d0af09e.js",
     "static/media/pokeball.png": "/2.2024-Sem-Oris/static/media/pokeball.134982d8c6fe4c351481.png",
     "static/media/search_logo.svg": "/2.2024-Sem-Oris/static/media/search_logo.c60421479a8021085c89.svg",
     "index.html": "/2.2024-Sem-Oris/index.html",
-    "main.4b628014.css.map": "/2.2024-Sem-Oris/static/css/main.4b628014.css.map",
-    "main.8f434f3a.js.map": "/2.2024-Sem-Oris/static/js/main.8f434f3a.js.map"
+    "main.a1ff3de6.css.map": "/2.2024-Sem-Oris/static/css/main.a1ff3de6.css.map",
+    "main.5d0af09e.js.map": "/2.2024-Sem-Oris/static/js/main.5d0af09e.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b628014.css",
-    "static/js/main.8f434f3a.js"
+    "static/css/main.a1ff3de6.css",
+    "static/js/main.5d0af09e.js"
   ]
 }
