@@ -284,11 +284,11 @@
 
 @media only screen and (max-width: 500px) {
     .header {
-        width: 100%;
+        background-position-x: 114%;
+        background-position-y: -36%;
+        background-size: 130px;
         height: 30%;
-        background-position-x: 111%;
-        background-position-y: -64%;
-        background-size: 100px;
+        width: 100%;
     }
 
     html{
