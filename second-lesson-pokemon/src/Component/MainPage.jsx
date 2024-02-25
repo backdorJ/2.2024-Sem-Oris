@@ -62,7 +62,7 @@ const MainPage = () => {
             {
                 isLoadingAfterPokeData && <Loader />
             }
-            <div style={{backgroundColor: "red"}} ref={ref}>End</div>
+            <div ref={ref}>End</div>
         </div>
     );
 };
