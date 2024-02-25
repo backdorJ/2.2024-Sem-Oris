@@ -8,8 +8,8 @@ const Wrapper = ({pokemonsData, filterPoke}) => {
     let filteredData = pokemonsData
         .filter((item) =>
             item.species.name.includes(filterPoke)
-            || item.id == filterPoke
-            || item.species.name == filterPoke);
+            || item.id === filterPoke
+            || item.species.name === filterPoke);
 
     console.log(filteredData)
 

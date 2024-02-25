@@ -8,20 +8,18 @@ import Loader from "./Loader/Loader";
 const MainPage = () => {
     const [pokemons, setPokemons] = useState([]);
     const [inputData, setInputData] = useState('');
-    const [maxCountPoke, setMacCountPoke] = useState(0)
+    const [maxCountPoke, setMaxCountPoke] = useState(0)
     const [pokemonsData, setPokemonsData] = useState([]);
     const [offset, setOffset] = useState(0);
     const [isLoading, fetching] = useFetchingPoke(async () => {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`);
         const data = await response.json();
         setPokemons([...data.results]);
-        setMacCountPoke(data.count)
+        setMaxCountPoke(data.count)
     });
     const { ref, inView } = useInView({
         threshold: 0.5,
     });
-
-    console.log(inView)
 
     const [isLoadingAfterPokeData, fetchingPokeData] = useFetchingPoke(async () => {
         const promises = pokemons.map(async (item, index) => {
@@ -30,8 +28,6 @@ const MainPage = () => {
         });
         const newData = await Promise.all(promises);
         setPokemonsData([...pokemonsData, ...newData]);
-        console.log(`INNER poke data FETCHING FIRST: ${pokemonsData}`)
-        console.log(pokemonsData)
     });
 
     const handleInputChange = (value) => {
@@ -39,20 +35,25 @@ const MainPage = () => {
     };
 
     useEffect(() => {
+        if (!pokemonsData) {
+            fetching();
+            setOffset(offset + 20)
+        }
+    }, [])
+
+    useEffect(() => {
         console.log(`first ${offset} next: ${offset + 20}`)
-        if (inView && pokemonsData && (offset <= maxCountPoke)) {
+        if (inView && pokemonsData && (offset <= maxCountPoke) && inputData === '') {
             fetching()
             setOffset(offset + 20)
         }
     }, [inView]);
 
     useEffect(() => {
-        if (pokemons && inView && inputData === '') {
+        if (pokemons && inputData === '') {
             fetchingPokeData();
         }
     }, [pokemons]);
-
-    console.log(pokemonsData)
 
     return (
         <div>
@@ -61,7 +62,7 @@ const MainPage = () => {
             {
                 isLoadingAfterPokeData && <Loader />
             }
-            <div style={{backgroundColor: "red"}} ref={ref}></div>
+            <div style={{backgroundColor: "red"}} ref={ref}>End</div>
         </div>
     );
 };
