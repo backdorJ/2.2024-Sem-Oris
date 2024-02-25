@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.6d6b383e.css",
-    "main.js": "/static/js/main.7ed34b5e.js",
-    "static/media/pokeball.png": "/static/media/pokeball.134982d8c6fe4c351481.png",
-    "static/media/search_logo.svg": "/static/media/search_logo.c60421479a8021085c89.svg",
-    "index.html": "/index.html",
-    "main.6d6b383e.css.map": "/static/css/main.6d6b383e.css.map",
-    "main.7ed34b5e.js.map": "/static/js/main.7ed34b5e.js.map"
+    "main.css": "/2.2024-Sem-Oris/static/css/main.4b628014.css",
+    "main.js": "/2.2024-Sem-Oris/static/js/main.c4522e66.js",
+    "static/media/pokeball.png": "/2.2024-Sem-Oris/static/media/pokeball.134982d8c6fe4c351481.png",
+    "static/media/search_logo.svg": "/2.2024-Sem-Oris/static/media/search_logo.c60421479a8021085c89.svg",
+    "index.html": "/2.2024-Sem-Oris/index.html",
+    "main.4b628014.css.map": "/2.2024-Sem-Oris/static/css/main.4b628014.css.map",
+    "main.c4522e66.js.map": "/2.2024-Sem-Oris/static/js/main.c4522e66.js.map"
   },
   "entrypoints": [
-    "static/css/main.6d6b383e.css",
-    "static/js/main.7ed34b5e.js"
+    "static/css/main.4b628014.css",
+    "static/js/main.c4522e66.js"
   ]
 }
