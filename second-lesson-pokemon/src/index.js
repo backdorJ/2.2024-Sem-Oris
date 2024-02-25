@@ -9,8 +9,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <HashRouter basename="/2.2024-Sem-Oris/">
         <Routes>
-            <Route path="/2.2024-Sem-Oris/" element={<App />} />
-            <Route path="/2.2024-Sem-Oris/poke-info/:name" element={<CardInfo />} />
+            <Route path="./" element={<App />} />
+            <Route path="./poke-info/:name" element={<CardInfo />} />
         </Routes>
     </HashRouter>
 );
