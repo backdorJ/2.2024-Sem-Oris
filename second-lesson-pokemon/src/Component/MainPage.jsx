@@ -38,21 +38,21 @@ const MainPage = () => {
         if (pokemons.length === 0)
         {
             fetching();
-            setOffset(offset + 20)
+            setOffset(offset + 30)
         }
     }, []);
 
     useEffect(() => {
         if (!pokemonsData) {
             fetching();
-            setOffset(offset + 20)
+            setOffset(offset + 30)
         }
     }, [])
 
     useEffect(() => {
         if (inView && pokemonsData && (offset <= maxCountPoke) && inputData === '') {
             fetching()
-            setOffset(offset + 20)
+            setOffset(offset + 30)
         }
     }, [inView]);
 
