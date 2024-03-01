@@ -30,9 +30,6 @@ const CardInfo = () => {
     if (isLoading)
         return <Loader/>
 
-    console.log(poke)
-    console.log(poke?.id)
-
     return (
         <>
             <div className={classes.header}>

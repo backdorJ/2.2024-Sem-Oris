@@ -54,6 +54,14 @@ const MainPage = () => {
         }
     }, [pokemons]);
 
+    useEffect(() => {
+        let endElement = document.querySelector('.end__for__pagination');
+        console.log(endElement)
+        if (endElement !== undefined) {
+            endElement.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+        }
+    }, [])
+
     return (
         <div>
             <Header changeInputData={handleInputChange} />
@@ -61,7 +69,7 @@ const MainPage = () => {
             {
                 isLoadingAfterPokeData && <Loader />
             }
-            <div className="end__for__pagination" ref={ref}>End</div>
+            <div className="end__for__pagination" ref={ref}>z</div>
         </div>
     );
 };
