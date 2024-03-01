@@ -35,6 +35,14 @@ const MainPage = () => {
     };
 
     useEffect(() => {
+        if (pokemons.length === 0)
+        {
+            fetching();
+            setOffset(offset + 20)
+        }
+    }, []);
+
+    useEffect(() => {
         if (!pokemonsData) {
             fetching();
             setOffset(offset + 20)
@@ -56,7 +64,7 @@ const MainPage = () => {
 
     useEffect(() => {
         let endElement = document.querySelector('.end__for__pagination');
-        console.log(endElement)
+        endElement.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         if (endElement !== undefined) {
             endElement.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
         }
