@@ -12,7 +12,7 @@ const MainPage = () => {
     const [pokemonsData, setPokemonsData] = useState([]);
     const [offset, setOffset] = useState(0);
     const [_, fetching] = useFetchingPoke(async () => {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${offset}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${offset}`);
         const data = await response.json();
         setPokemons([...data.results]);
         setMaxCountPoke(data.count)
