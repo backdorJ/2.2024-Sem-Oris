@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/2.2024-Sem-Oris/static/css/main.e321a5fe.css",
-    "main.js": "/2.2024-Sem-Oris/static/js/main.39864919.js",
+    "main.js": "/2.2024-Sem-Oris/static/js/main.abfbd852.js",
     "static/media/pokeball.png": "/2.2024-Sem-Oris/static/media/pokeball.134982d8c6fe4c351481.png",
     "index.html": "/2.2024-Sem-Oris/index.html",
     "static/media/search_logo.svg": "/2.2024-Sem-Oris/static/media/search_logo.c60421479a8021085c89.svg",
     "main.e321a5fe.css.map": "/2.2024-Sem-Oris/static/css/main.e321a5fe.css.map",
-    "main.39864919.js.map": "/2.2024-Sem-Oris/static/js/main.39864919.js.map"
+    "main.abfbd852.js.map": "/2.2024-Sem-Oris/static/js/main.abfbd852.js.map"
   },
   "entrypoints": [
     "static/css/main.e321a5fe.css",
-    "static/js/main.39864919.js"
+    "static/js/main.abfbd852.js"
   ]
 }
