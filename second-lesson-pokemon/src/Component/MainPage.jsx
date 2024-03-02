@@ -50,14 +50,14 @@ const MainPage = () => {
     }, [])
 
     useEffect(() => {
-        if (inView && pokemonsData && (offset <= maxCountPoke) && inputData === '') {
+        if (inView && pokemonsData && (offset <= maxCountPoke)) {
             fetching()
             setOffset(offset + 30)
         }
     }, [inView]);
 
     useEffect(() => {
-        if (pokemons && inputData === '') {
+        if (pokemons) {
             fetchingPokeData();
         }
     }, [pokemons]);
