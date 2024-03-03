@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 using PokemonAPI.FilterService;
 using PokemonAPI.Modules.Requests.PokemonsGetByFilter;
@@ -12,12 +13,18 @@ public class PokeApiService : IPokeApiService
 {
     private readonly HttpClient _httpClient;
 
+    private readonly IDistributedCache _distributedCache;
+
     /// <summary>
     /// Конструктор
     /// </summary>
     /// <param name="httpClient">Http-клиент</param>
-    public PokeApiService(HttpClient httpClient)
-        => _httpClient = httpClient;
+    /// <param name="distributedCache">Сервис для работы с кешем</param>
+    public PokeApiService(HttpClient httpClient, IDistributedCache distributedCache)
+    {
+        _httpClient = httpClient;
+        _distributedCache = distributedCache;
+    }
 
     /// <inheritdoc />
     public async Task<PokemonsGetByFilterResponse> GetPokeDataAsync(
@@ -55,15 +62,23 @@ public class PokeApiService : IPokeApiService
         if (string.IsNullOrWhiteSpace(url))
             throw new ArgumentNullException(nameof(url));
 
+        var responseFromCache = await _distributedCache.GetStringAsync(placeholder, cancellationToken);
+
+        if (!string.IsNullOrEmpty(responseFromCache))
+            return JsonConvert.DeserializeObject<PokemonsGetByIdOrNameResponse>(responseFromCache)
+                ?? throw new ArgumentNullException(nameof(responseFromCache));
+            
         using var response = await _httpClient.GetAsync($"{url}/{placeholder.ToLower()}", cancellationToken);
 
         if (!response.IsSuccessStatusCode)
             throw new ArgumentException("Что-то пошло не так");
 
         var pokeJson = await response.Content.ReadAsStringAsync(cancellationToken);
-        var pokeData = JsonConvert.DeserializeObject<PokemonsGetByIdOrNameResponse>(pokeJson)
+        var pokeData = JsonConvert.DeserializeObject<PokemonsGetByIdOrNameResponse>(pokeJson) 
             ?? throw new ArgumentNullException(nameof(pokeJson));
 
+        await _distributedCache.SetStringAsync(placeholder, pokeJson, cancellationToken);
+            
         return pokeData;
     }
 }

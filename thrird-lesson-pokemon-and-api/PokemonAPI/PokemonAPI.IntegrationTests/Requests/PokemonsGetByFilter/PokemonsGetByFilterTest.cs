@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 using PokemonAPI.Modules.Requests.PokemonsGetByFilter;
 using PokemonAPI.Paths;
 using PokemonAPI.Services;
@@ -5,7 +7,7 @@ using PokemonAPI.Services;
 namespace PokemonAPI.Tests.Requests.PokemonsGetByFilter;
 
 [TestClass]
-public class PokemonsGetByFilterTest
+public class PokemonsGetByFilterTest : UnitTestBase
 {
     private static readonly HttpClient HttpClient = new();
     
@@ -15,7 +17,7 @@ public class PokemonsGetByFilterTest
     /// Конструктор
     /// </summary>
     public PokemonsGetByFilterTest()
-        => _pokeApiService = new PokeApiService(HttpClient);
+        => _pokeApiService = new PokeApiService(HttpClient, MockIDistributedCache.Object);
 
     /// <summary>
     /// Обработчик должен вернуть покемона по поиску

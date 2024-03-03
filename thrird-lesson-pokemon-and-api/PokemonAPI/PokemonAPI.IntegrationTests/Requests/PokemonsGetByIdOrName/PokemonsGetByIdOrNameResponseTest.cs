@@ -1,10 +1,12 @@
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Caching.StackExchangeRedis;
 using PokemonAPI.Paths;
 using PokemonAPI.Services;
 
 namespace PokemonAPI.Tests.Requests.PokemonsGetByIdOrName;
 
 [TestClass]
-public class PokemonsGetByIdOrNameResponseTest
+public class PokemonsGetByIdOrNameResponseTest : UnitTestBase
 {
     private static readonly HttpClient HttpClient = new();
     
@@ -14,7 +16,7 @@ public class PokemonsGetByIdOrNameResponseTest
     /// Конструктор
     /// </summary>
     public PokemonsGetByIdOrNameResponseTest()
-        => _pokeApiService = new PokeApiService(HttpClient);
+        => _pokeApiService = new PokeApiService(HttpClient, MockIDistributedCache.Object);
 
     /// <summary>
     /// Обработчик должен вернуть полную информацию покемона по имени

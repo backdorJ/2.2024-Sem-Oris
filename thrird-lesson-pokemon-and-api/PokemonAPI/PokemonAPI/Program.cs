@@ -19,6 +19,12 @@ builder.Services.AddCors(options =>
             "AllowAnyOrigin",
             opt => opt.AllowAnyOrigin());
 });
+// Add Redis
+builder.Services.AddStackExchangeRedisCache((opt) =>
+{
+    var configuration = builder.Configuration;
+    opt.Configuration = configuration.GetValue<string>("CacheSettings:RedisConnection");
+});
 builder.Services.AddScoped<IPokeApiService, PokeApiService>();
 builder.Services.AddLogging();
 
