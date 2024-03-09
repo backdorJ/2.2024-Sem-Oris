@@ -70,6 +70,8 @@ const MainPage = () => {
         }
     }, [])
 
+    console.log(pokemonsData)
+
     return (
         <div>
             <Header changeInputData={handleInputChange} />

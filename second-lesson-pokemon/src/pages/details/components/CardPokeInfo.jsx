@@ -50,7 +50,7 @@ const CardPokeInfo = ({poke, stats}) => {
                     </div>
                 </div>
                 <div className={classes.card__body__image}>
-                    <img src={poke?.sprites?.front_default} alt=""/>
+                    <img src={poke?.sprites?.other?.home?.front_shiny} alt=""/>
                 </div>
             </div>
             <div className={classes.card__footer}></div>

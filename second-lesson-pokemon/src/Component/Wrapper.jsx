@@ -21,7 +21,7 @@ const Wrapper = ({pokemonsData, filterPoke}) => {
                 filteredData.map((item, _) => {
                     {
                         return <Card
-                            img={item.sprites.front_default}
+                            img={item.sprites.other.home.front_shiny}
                             key={item.id}
                             name={item.species.name}
                             id={item.id}
