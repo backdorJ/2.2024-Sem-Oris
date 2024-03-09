@@ -12,7 +12,7 @@ const MainPage = () => {
     const [pokemonsData, setPokemonsData] = useState([]);
     const [offset, setOffset] = useState(0);
     const [_, fetching] = useFetchingPoke(async () => {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=30&offset=${offset}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=50&offset=${offset}`);
         const data = await response.json();
         setPokemons([...data.results]);
         setMaxCountPoke(data.count)
@@ -38,21 +38,21 @@ const MainPage = () => {
         if (pokemons.length === 0)
         {
             fetching();
-            setOffset(offset + 30)
+            setOffset(offset + 50)
         }
     }, []);
 
     useEffect(() => {
         if (!pokemonsData) {
             fetching();
-            setOffset(offset + 30)
+            setOffset(offset + 50)
         }
     }, [])
 
     useEffect(() => {
         if (inView && pokemonsData && (offset <= maxCountPoke)) {
             fetching()
-            setOffset(offset + 30)
+            setOffset(offset + 50)
         }
     }, [inView]);
 
