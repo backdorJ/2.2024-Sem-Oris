@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonAPI", "PokemonAPI\PokemonAPI.csproj", "{3544944D-BC62-41D8-801C-3FCA0F3A23D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonAPI.IntegrationTests", "PokemonAPI.IntegrationTests\PokemonAPI.IntegrationTests.csproj", "{4D6ABE55-1757-48B7-84D8-BFF3248FE85B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonAPI.DAL.PostgreSQL", "PokemonAPI.DAL.PostgreSQL\PokemonAPI.DAL.PostgreSQL.csproj", "{B41E8C59-301C-4B54-B527-718071E5062C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokemonAPI.Core", "PokemonAPI.Core\PokemonAPI.Core.csproj", "{EC794026-CD73-4A64-A811-F047046E72C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3544944D-BC62-41D8-801C-3FCA0F3A23D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3544944D-BC62-41D8-801C-3FCA0F3A23D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3544944D-BC62-41D8-801C-3FCA0F3A23D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3544944D-BC62-41D8-801C-3FCA0F3A23D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D6ABE55-1757-48B7-84D8-BFF3248FE85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D6ABE55-1757-48B7-84D8-BFF3248FE85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D6ABE55-1757-48B7-84D8-BFF3248FE85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D6ABE55-1757-48B7-84D8-BFF3248FE85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B41E8C59-301C-4B54-B527-718071E5062C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B41E8C59-301C-4B54-B527-718071E5062C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B41E8C59-301C-4B54-B527-718071E5062C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B41E8C59-301C-4B54-B527-718071E5062C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC794026-CD73-4A64-A811-F047046E72C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC794026-CD73-4A64-A811-F047046E72C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC794026-CD73-4A64-A811-F047046E72C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC794026-CD73-4A64-A811-F047046E72C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
