@@ -11,6 +11,8 @@ builder.Services.AddSwaggerGen(options =>
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
+//builder.Services.AddCore();
+//builder.Services.AddDbContext<EfContext>(opt => opt.UseNpgsql(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 builder.Services.AddHttpClient();
 builder.Services.AddCors(options =>
 {
