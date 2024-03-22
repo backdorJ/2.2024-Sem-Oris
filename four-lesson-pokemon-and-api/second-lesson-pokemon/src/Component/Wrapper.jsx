@@ -4,17 +4,20 @@ import React from "react";
 import Card from "./Card";
 import NotFound from "./NotFound";
 
-const Wrapper = ({pokemonsData, filterPoke}) => {
+const Wrapper = ({pokemonsData, filterPoke, isClick}) => {
+
+    if (isClick === true && filterPoke === '')
+        return <NotFound />
 
     let filteredData = pokemonsData
         .filter((item) =>
-            filterPoke === null
+            filterPoke === ''
             || (item.name && item.name.includes(filterPoke))
             || item.name.toLowerCase() === filterPoke.toLowerCase());
 
     console.log(filteredData)
 
-    if (pokemonsData.length === 0 && filterPoke !== '')
+    if (filteredData === undefined)
         return <NotFound />
 
     return (

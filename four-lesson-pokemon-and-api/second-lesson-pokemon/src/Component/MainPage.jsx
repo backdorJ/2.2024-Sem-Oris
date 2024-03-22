@@ -11,6 +11,7 @@ const MainPage = () => {
     const [maxCountPoke, setMaxCountPoke] = useState(0)
     const [pokemonsData, setPokemonsData] = useState([]);
     const [filteredData, setfilteredData] = useState([]);
+    const [isClick, setIsClick] = useState(false)
     const [offset, setOffset] = useState(1);
     const [_, fetching] = useFetchingPoke(async () => {
         const response = await fetch(`https://localhost:44343/api/Pokemon?pageSize=30&pageNumber=${offset}`);
@@ -40,6 +41,7 @@ const MainPage = () => {
         const data = await response.json();
         setPokemonsData([])
         setPokemonsData([data])
+        setIsClick(true)
     }
 
     useEffect(() => {
@@ -81,7 +83,7 @@ const MainPage = () => {
     return (
         <div>
             <Header changeInputData={handleInputChange} clickSearch={handleClickButtonSearch}/>
-            <Wrapper pokemonsData={pokemonsData} filterPoke={inputData} />
+            <Wrapper pokemonsData={pokemonsData} filterPoke={inputData} isClick={isClick}/>
             {
                 isLoadingAfterPokeData && <Loader />
             }
