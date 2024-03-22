@@ -14,7 +14,7 @@ const MainPage = () => {
     const [isClick, setIsClick] = useState(false)
     const [offset, setOffset] = useState(1);
     const [_, fetching] = useFetchingPoke(async () => {
-        const response = await fetch(`https://localhost:44343/api/Pokemon?pageSize=30&pageNumber=${offset}`);
+        const response = await fetch(`https://localhost:44343/api/Pokemon?pageSize=50&pageNumber=${offset}`);
         const data = await response.json();
         setPokemons([...data.entities]);
         setMaxCountPoke(data.totalCount)
