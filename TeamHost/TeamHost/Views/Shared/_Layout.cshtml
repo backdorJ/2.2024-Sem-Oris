@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TeamHost - Join now and play mighty games!</title>
+    <meta content="Templines" name="author">
+    <meta content="TeamHost" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link rel="shortcut icon" href="~/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/libs.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+</head>
+<body>
+<div class="page-wrapper">
+    <partial name="_HeaderPartial"/>
+    <div class="page-content">
+        <partial name="_NavBarPartial"/>
+        <main class="page-main">
+            @RenderBody()
+        </main>
+    </div>  
+</div>
+<div class="page-modals">
+    @await Html.PartialAsync("Support/_ReportPartial")
+    @await Html.PartialAsync("Support/_HelpPartial")
+</div>
+@await RenderSectionAsync("Scripts", required: false)
+<script src="~/js/libs.js"></script>
+<script src="~/js/main.js"></script>
+</body>
+</html>

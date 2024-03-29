@@ -1,0 +1,23 @@
+@model dynamic
+
+@{
+    Layout = "_Layout";
+}
+<main class="page-main">
+    <video id="videoPlayer" class="w-full h-full" controls></video>
+</main>
+<script src="~/js/flv.min.js"></script>
+<script>
+    if (flvjs.isSupported()) {
+        let videoElement = document.getElementById('videoPlayer');
+        let flvPlayer = flvjs.createPlayer({
+            type: 'flv',
+            url: 'https://localhost:7046/live/demo.flv'
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+    } else {
+        console.error('FLV is not supported');
+    }
+</script>
