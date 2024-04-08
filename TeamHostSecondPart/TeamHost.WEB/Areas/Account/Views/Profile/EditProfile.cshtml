@@ -1,0 +1,71 @@
+@using Microsoft.EntityFrameworkCore
+@using TeamHost.Application.Interfaces
+@using TeamHost.Domain.Entities
+@model TeamHost.Application.Contracts.Profile.EditProfile.EditProfileRequest
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject IDbContext dbContext
+
+@{
+    Layout = "_Layout";
+    var allCountriesFromDb = await dbContext.Countries
+        .Select(x => new { x.Name, x.Id })
+        .ToListAsync();
+
+    var selectedListCoutries = new SelectList(allCountriesFromDb, nameof(Country.Id), nameof(Country.Name));
+}
+
+<div class="container">
+    <form id="profileForm" class="profile-form"
+          asp-action="EditProfile"
+          asp-area="Account"
+          asp-controller="Profile"
+          method="post">
+        <div class="form-group">
+            <label for="firstName" class="form-label">Имя</label>
+            <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                asp-for="FirstName"
+                class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="form-label">Фамилия</label>
+            <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                class="form-input"
+                asp-for="LastName"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="patronymic" class="form-label">Отчество</label>
+            <input
+                type="text"
+                id="patronymic"
+                name="patronymic"
+                asp-for="Patronymic"
+                class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="birthday" class="form-label">Дата рождения</label>
+            <input
+                type="date"
+                id="birthday"
+                name="birthday"
+                asp-for="Birthday"
+                class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="about" class="form-label">Обо мне</label>
+            <textarea asp-for="About" id="about" name="about" class="form-textarea" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="country" class="form-label">Страна</label>
+            <select asp-for="Country" id="country" name="country" asp-items="selectedListCoutries" class="form-select">
+            </select>
+        </div>
+        <button type="submit" class="btn-save">Сохранить</button>
+    </form>
+</div>
