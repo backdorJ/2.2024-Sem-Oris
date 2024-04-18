@@ -1,0 +1,350 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+        <RootNamespace>TeamHost</RootNamespace>
+        <UserSecretsId>bf6a5074-cf4c-40dd-a2a8-10d105fcfd56</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+      <Content Update="Views\Shared\_HeaderPartial.cshtml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\game-5.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\hell_is_other_demons.jpeg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\detail_image_hell_is_other_1.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\detail_image_hell_is_other_2.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\detail_image_hell_is_other_3.jpg">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Curse_of_the_Dead_Gods.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Curse of the Dead Gods_2.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Curse of the Dead Gods_3.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Curse of the Dead Gods_1.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Frostpunk_main.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Frostpunk_4.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Frostpunk_3.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Frostpunk_2.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\total-war-1.webp">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\total-war-2.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\counter-strike-2.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\counter-strike-1.jpeg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Update="wwwroot\img\Counter-strike_2_main.jpg">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Areas\Account\Models\" />
+      <Folder Include="Areas\Home\Models\" />
+      <Folder Include="Areas\Home\Views\" />
+      <Folder Include="Areas\Main\Models\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\css\site.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\bootstrap\LICENSE" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\additional-methods.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-validation\LICENSE.md" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\dist\jquery.min.map" />
+      <_ContentIncludedByDefault Remove="wwwroot\lib\jquery\LICENSE.txt" />
+      <_ContentIncludedByDefault Remove="Areas\Report\Views\Report\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Main\Views\Shared\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Main\Views\Shared\_ViewStart.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="wwwroot\css\libs.min.css" />
+      <None Include="wwwroot\css\main.css" />
+      <None Include="wwwroot\css\maps\main.css.map" />
+      <None Include="wwwroot\css\showcase.css" />
+      <None Include="wwwroot\fonts\icons.eot" />
+      <None Include="wwwroot\fonts\icons.svg" />
+      <None Include="wwwroot\fonts\icons.ttf" />
+      <None Include="wwwroot\fonts\icons.woff" />
+      <None Include="wwwroot\fonts\icons.woff2" />
+      <None Include="wwwroot\fonts\SegoeUI-Bold.woff" />
+      <None Include="wwwroot\fonts\SegoeUI-Bold.woff2" />
+      <None Include="wwwroot\fonts\SegoeUI-BoldItalic.woff" />
+      <None Include="wwwroot\fonts\SegoeUI-BoldItalic.woff2" />
+      <None Include="wwwroot\fonts\SegoeUI-Italic.woff" />
+      <None Include="wwwroot\fonts\SegoeUI-Italic.woff2" />
+      <None Include="wwwroot\fonts\SegoeUI-Light.woff" />
+      <None Include="wwwroot\fonts\SegoeUI-Light.woff2" />
+      <None Include="wwwroot\fonts\SegoeUI-SemiBold.woff" />
+      <None Include="wwwroot\fonts\SegoeUI-SemiBold.woff2" />
+      <None Include="wwwroot\fonts\SegoeUI.woff" />
+      <None Include="wwwroot\fonts\SegoeUI.woff2" />
+      <None Include="wwwroot\img\acheivement-1.png" />
+      <None Include="wwwroot\img\acheivement-2.png" />
+      <None Include="wwwroot\img\acheivement-3.png" />
+      <None Include="wwwroot\img\acheivement-4.png" />
+      <None Include="wwwroot\img\acheivement-5.png" />
+      <None Include="wwwroot\img\activities-1.png" />
+      <None Include="wwwroot\img\activities-2.png" />
+      <None Include="wwwroot\img\activity-1.jpg" />
+      <None Include="wwwroot\img\activity-2.jpg" />
+      <None Include="wwwroot\img\Badge 1.png" />
+      <None Include="wwwroot\img\Badge 2.png" />
+      <None Include="wwwroot\img\Badge 3.png" />
+      <None Include="wwwroot\img\badge-1.png" />
+      <None Include="wwwroot\img\badge-2.png" />
+      <None Include="wwwroot\img\badge-3.png" />
+      <None Include="wwwroot\img\bg-first-screen.jpg" />
+      <None Include="wwwroot\img\c0.jpg" />
+      <None Include="wwwroot\img\c1.jpeg" />
+      <None Include="wwwroot\img\c2.jpeg" />
+      <None Include="wwwroot\img\c3.jpeg" />
+      <None Include="wwwroot\img\c4.jpeg" />
+      <None Include="wwwroot\img\c5.jpeg" />
+      <None Include="wwwroot\img\community-item-1.jpg" />
+      <None Include="wwwroot\img\community-item-2.jpg" />
+      <None Include="wwwroot\img\community-item-3.jpg" />
+      <None Include="wwwroot\img\community-item-4.jpg" />
+      <None Include="wwwroot\img\community-item-5.jpg" />
+      <None Include="wwwroot\img\cv.jpg" />
+      <None Include="wwwroot\img\favicon.png" />
+      <None Include="wwwroot\img\game-1.jpg" />
+      <None Include="wwwroot\img\game-1.png" />
+      <None Include="wwwroot\img\game-10.jpg" />
+      <None Include="wwwroot\img\game-11.jpg" />
+      <None Include="wwwroot\img\game-12.jpg" />
+      <None Include="wwwroot\img\game-2.jpg" />
+      <None Include="wwwroot\img\game-2.png" />
+      <None Include="wwwroot\img\game-3.jpg" />
+      <None Include="wwwroot\img\game-3.png" />
+      <None Include="wwwroot\img\game-4.jpg" />
+      <None Include="wwwroot\img\game-4.png" />
+      <None Include="wwwroot\img\game-5.jpg" />
+      <None Include="wwwroot\img\game-6.jpg" />
+      <None Include="wwwroot\img\game-7.jpg" />
+      <None Include="wwwroot\img\game-8.jpg" />
+      <None Include="wwwroot\img\game-9.jpg" />
+      <None Include="wwwroot\img\game-profile-card.jpg" />
+      <None Include="wwwroot\img\hunt-showdown.jpg" />
+      <None Include="wwwroot\img\logo.png" />
+      <None Include="wwwroot\img\mac.png" />
+      <None Include="wwwroot\img\market-item-1.jpg" />
+      <None Include="wwwroot\img\market-item-2.jpg" />
+      <None Include="wwwroot\img\market-item-3.jpg" />
+      <None Include="wwwroot\img\market-item-4.jpg" />
+      <None Include="wwwroot\img\profile.png" />
+      <None Include="wwwroot\img\pubg.jpg" />
+      <None Include="wwwroot\img\recommend-slide-img.png" />
+      <None Include="wwwroot\img\recommend-slide-logo.png" />
+      <None Include="wwwroot\img\streem-item-1.jpg" />
+      <None Include="wwwroot\img\streem-item-10.jpg" />
+      <None Include="wwwroot\img\streem-item-11.jpg" />
+      <None Include="wwwroot\img\streem-item-12.jpg" />
+      <None Include="wwwroot\img\streem-item-2.jpg" />
+      <None Include="wwwroot\img\streem-item-3.jpg" />
+      <None Include="wwwroot\img\streem-item-4.jpg" />
+      <None Include="wwwroot\img\streem-item-5.jpg" />
+      <None Include="wwwroot\img\streem-item-6.jpg" />
+      <None Include="wwwroot\img\streem-item-7.jpg" />
+      <None Include="wwwroot\img\streem-item-8.jpg" />
+      <None Include="wwwroot\img\streem-item-9.jpg" />
+      <None Include="wwwroot\img\stronghold.jpg" />
+      <None Include="wwwroot\img\svgico\add-square.svg" />
+      <None Include="wwwroot\img\svgico\apple.svg" />
+      <None Include="wwwroot\img\svgico\arrow-circle-left.svg" />
+      <None Include="wwwroot\img\svgico\arrow-circle-right.svg" />
+      <None Include="wwwroot\img\svgico\attach-circle.svg" />
+      <None Include="wwwroot\img\svgico\call.svg" />
+      <None Include="wwwroot\img\svgico\chats.svg" />
+      <None Include="wwwroot\img\svgico\clipboard-text.svg" />
+      <None Include="wwwroot\img\svgico\close-circle.svg" />
+      <None Include="wwwroot\img\svgico\community.svg" />
+      <None Include="wwwroot\img\svgico\edit.svg" />
+      <None Include="wwwroot\img\svgico\emoji-happy.svg" />
+      <None Include="wwwroot\img\svgico\eye.svg" />
+      <None Include="wwwroot\img\svgico\favourites.svg" />
+      <None Include="wwwroot\img\svgico\friends.svg" />
+      <None Include="wwwroot\img\svgico\gallery.svg" />
+      <None Include="wwwroot\img\svgico\help.svg" />
+      <None Include="wwwroot\img\svgico\home.svg" />
+      <None Include="wwwroot\img\svgico\info-circle.svg" />
+      <None Include="wwwroot\img\svgico\market.svg" />
+      <None Include="wwwroot\img\svgico\menu.svg" />
+      <None Include="wwwroot\img\svgico\message.svg" />
+      <None Include="wwwroot\img\svgico\microphone.svg" />
+      <None Include="wwwroot\img\svgico\more.svg" />
+      <None Include="wwwroot\img\svgico\notification.svg" />
+      <None Include="wwwroot\img\svgico\play-circle.svg" />
+      <None Include="wwwroot\img\svgico\profile.svg" />
+      <None Include="wwwroot\img\svgico\report.svg" />
+      <None Include="wwwroot\img\svgico\search.svg" />
+      <None Include="wwwroot\img\svgico\shopping-cart.svg" />
+      <None Include="wwwroot\img\svgico\star.svg" />
+      <None Include="wwwroot\img\svgico\store.svg" />
+      <None Include="wwwroot\img\svgico\streams.svg" />
+      <None Include="wwwroot\img\svgico\tick-circle.svg" />
+      <None Include="wwwroot\img\svgico\trash.svg" />
+      <None Include="wwwroot\img\svgico\video-circle.svg" />
+      <None Include="wwwroot\img\svgico\wallet.svg" />
+      <None Include="wwwroot\img\svgico\windows.svg" />
+      <None Include="wwwroot\img\total-war.jpg" />
+      <None Include="wwwroot\img\trending.jpg" />
+      <None Include="wwwroot\img\user-1.png" />
+      <None Include="wwwroot\img\user-2.png" />
+      <None Include="wwwroot\img\user-3.png" />
+      <None Include="wwwroot\img\user-4.png" />
+      <None Include="wwwroot\img\user-list-1.png" />
+      <None Include="wwwroot\img\user-list-10.png" />
+      <None Include="wwwroot\img\user-list-11.png" />
+      <None Include="wwwroot\img\user-list-12.png" />
+      <None Include="wwwroot\img\user-list-2.png" />
+      <None Include="wwwroot\img\user-list-3.png" />
+      <None Include="wwwroot\img\user-list-4.png" />
+      <None Include="wwwroot\img\user-list-5.png" />
+      <None Include="wwwroot\img\user-list-6.png" />
+      <None Include="wwwroot\img\user-list-7.png" />
+      <None Include="wwwroot\img\user-list-8.png" />
+      <None Include="wwwroot\img\user-list-9.png" />
+      <None Include="wwwroot\js\libs.js" />
+      <None Include="wwwroot\js\main.js" />
+      <None Include="wwwroot\preview\01_log-In.jpg" />
+      <None Include="wwwroot\preview\02_register.jpg" />
+      <None Include="wwwroot\preview\03_home.jpg" />
+      <None Include="wwwroot\preview\04_profile.jpg" />
+      <None Include="wwwroot\preview\05_favourites.jpg" />
+      <None Include="wwwroot\preview\06_chats.jpg" />
+      <None Include="wwwroot\preview\07_friends.jpg" />
+      <None Include="wwwroot\preview\08_wallet.jpg" />
+      <None Include="wwwroot\preview\09_games-store.jpg" />
+      <None Include="wwwroot\preview\10_game-profile.jpg" />
+      <None Include="wwwroot\preview\11_market.jpg" />
+      <None Include="wwwroot\preview\12_streams.jpg" />
+      <None Include="wwwroot\preview\13_community.jpg" />
+      <None Include="wwwroot\preview\14_report.jpg" />
+      <None Include="wwwroot\preview\15_help.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="LiveStreamingServerNet" Version="0.7.0" />
+      <PackageReference Include="LiveStreamingServerNet.Flv" Version="0.7.0" />
+      <PackageReference Include="MediatR" Version="12.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.11" />
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="7.0.11" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.11" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.11">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.11">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      </PackageReference>
+      <PackageReference Include="Npgsql" Version="7.0.6" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Areas\Account\Views\Chat\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Account\Views\Favourite\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Account\Views\Friend\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Account\Views\Profile\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Account\Views\Wallet\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Main\Views\Community\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Main\Views\Live\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Main\Views\Market\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Main\Views\Store\Index.cshtml" />
+      <AdditionalFiles Include="Areas\Main\Views\Stream\Index.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TeamHost.Infrastructure\TeamHost.Infrastructure.csproj" />
+      <ProjectReference Include="..\TeamHost.Persistence\TeamHost.Persistence.csproj" />
+    </ItemGroup>
+
+</Project>
