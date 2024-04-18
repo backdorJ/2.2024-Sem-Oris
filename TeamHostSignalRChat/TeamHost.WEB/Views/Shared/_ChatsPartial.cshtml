@@ -1,0 +1,28 @@
+@using TeamHost.Application.Interfaces
+@using Humanizer
+@model List<TeamHost.Application.Contracts.Chats.GetChats.GetChatsResponse>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject IDateTimeProvider DateTimeProvider;
+
+<ul class="chat-user-list__body">
+    @foreach (var chat in Model)
+    {
+        var image = chat.Image ?? "img/profile.png";
+        var date = chat.LastSend.HasValue ? DateTimeProvider.CurrentDate.Subtract(chat.LastSend.Value).Humanize() : "";
+        <li id="friend-id=@(chat.FriendId != null && !chat.IsGroup ? chat.FriendId : "")">
+            <div class="user-item" data-message-id="@chat.ChatId">
+                <div class="@(chat.IsGroup ? "group" : "user-item__avatar")">
+                    <img src="~/@image" alt="user">
+                </div>
+                <div class="user-item__desc">
+                    <div class="user-item__name">@chat.TitleChat</div>
+                    <div class="user-item__text">@chat.LastReceivedMessage</div>
+                </div>
+                <div class="user-item__info">
+                    <div class="user-item__time">@date</div>
+                    @* <div class="user-item__count">1</div> *@
+                </div>
+            </div>
+        </li>
+    }
+</ul>

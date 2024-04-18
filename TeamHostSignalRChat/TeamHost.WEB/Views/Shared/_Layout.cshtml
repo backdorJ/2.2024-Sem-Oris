@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>TeamHost.WEB - Join now and play mighty games!</title>
+    <meta content="Templines" name="author">
+    <meta content="TeamHost.WEB" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="~/css/libs.min.css">
+    <link rel="shortcut icon" href="~/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/custom.css">
+    <style>
+        .user-item__avatar:after {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            right: 2px;
+            bottom: 2px;
+            width: 10px;
+            height: 10px;
+            border: 1.5px solid #FFFFFF;
+            border-radius: 50%;
+            background: red !important;
+            content: '';
+        }
+        
+        .user-item.--active .user-item__avatar:after {
+            background: green !important;
+        }
+        
+        .group img {
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+        
+        .sender-name{
+            font-size: 10px;
+            color: rgb(128,128,128);
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <partial name="_HeaderPartial"/>
+    <div class="page-content">
+        <partial name="_NavBarPartial"/>
+        <main class="page-main">
+            @RenderBody()
+        </main>
+    </div>  
+</div>
+<div class="page-modals">
+    @await Html.PartialAsync("Support/_ReportPartial")
+    @await Html.PartialAsync("Support/_HelpPartial")
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
+<script src="~/js/libs.js"></script>
+<script src="~/js/main.js"></script>
+</body>
+</html>
