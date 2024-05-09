@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TeamHost.Areas.Home.Controllers;
@@ -6,8 +7,19 @@ namespace TeamHost.Areas.Home.Controllers;
 public class HomeController : Controller
 {
     // GET
-    public IActionResult Index()
+    public IActionResult Index([FromQuery] string? culture)
     {
+        if (!string.IsNullOrEmpty(culture))
+        {
+            Response.Cookies.Append(
+                CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions
+                {
+                    Expires = DateTimeOffset.UtcNow.AddYears(1)
+                });
+        }
+        
         return View();
     }
 }

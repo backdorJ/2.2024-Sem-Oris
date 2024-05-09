@@ -60,7 +60,7 @@ public class GetMessagesChatsQueryHandler
                         .FirstOrDefault(y => y.UserId != _userContext.CurrentUserId)!.User!.UserName,
                IsGroup = x.Chat.UserInfos.Count() > 2,
                 Messages = x.Message
-                    .OrderBy(y => y.CreatedDate)
+                    .OrderByDescending(y => y.CreatedDate)
                     .Take(TakeCountMessages)
                     .Select(y => new GetMessagesChatsResponseItem
                     {
@@ -69,6 +69,7 @@ public class GetMessagesChatsQueryHandler
                         ReceiveMessageImage = y.UserInfo.Image!.Path,
                         IsYourMessage = y.UserInfo.UserId == _userContext.CurrentUserId,
                     })
+                    .Reverse()
                     .ToList(),
             })
             .FirstOrDefaultAsync(cancellationToken)

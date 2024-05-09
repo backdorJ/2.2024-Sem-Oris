@@ -1,8 +1,11 @@
+using System.Globalization;
 using System.Net;
 using LiveStreamingServerNet;
 using LiveStreamingServerNet.Flv.Installer;
 using LiveStreamingServerNet.Networking.Helpers;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using TeamHost.Application;
 using TeamHost.Application.Interfaces;
@@ -10,7 +13,6 @@ using TeamHost.Cors;
 using TeamHost.Domain.Entities;
 using TeamHost.Hub;
 using TeamHost.Infrastructure;
-using TeamHost.Infrastructure.Services;
 using TeamHost.Persistence;
 using TeamHost.Persistence.Context;
 using TeamHost.Persistence.Extensions;
@@ -23,7 +25,10 @@ await using var liveStreamingServer = LiveStreamingServerBuilder.Create()
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+    .AddDataAnnotationsLocalization();
 builder.Services.AddDbContext<EfContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")))
     .Configure<IdentityOptions>(opt =>
@@ -78,6 +83,18 @@ app.UseSwaggerUI(c =>
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
 });
 
+var supportedCulture = new[]
+{
+    "en",
+    "ru"
+};
+
+var localizationOpt = new RequestLocalizationOptions().SetDefaultCulture(supportedCulture[0])
+    .AddSupportedCultures(supportedCulture)
+    .AddSupportedUICultures(supportedCulture);
+
+app.UseRequestLocalization(localizationOpt);
+
 app.UseWebSockets();
 app.UseWebSocketFlv(liveStreamingServer);
 
@@ -89,6 +106,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapHub<ChatHub>("ws/chat");
