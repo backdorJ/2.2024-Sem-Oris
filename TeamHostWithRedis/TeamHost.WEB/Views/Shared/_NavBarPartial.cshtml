@@ -1,0 +1,31 @@
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Mvc.Localization
+@using TeamHost.Domain.Entities
+@inject SignInManager<User> SignInManager;
+@inject IViewLocalizer Localizer
+
+<aside class="sidebar is-show" id="sidebar">
+    <div class="sidebar-box">
+        <ul class="uk-nav">
+            <li class="nav-list"><a asp-controller="Home" asp-action="Index" asp-area="Home"><i class="ico_home"></i><span>@Localizer["Home"]</span></a></li>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <li class="uk-nav-header">Account</li>
+                <li class="nav-list"><a asp-controller="Profile" asp-action="Index" asp-area="Account"><i class="ico_profile"></i><span>@Localizer["Profile"]</span></a></li>
+                <li class="nav-list"><a asp-controller="Favourite" asp-action="Index" asp-area="Account"><i class="ico_favourites"></i><span>@Localizer["Favourites"]</span><span class="count">15</span></a></li>
+                <li class="nav-list"><a asp-controller="Chat" asp-action="Index" asp-area="Account"><i class="ico_chats"></i><span>@Localizer["Chats"]</span></a></li>
+                <li class="nav-list"><a asp-controller="Friend" asp-action="Index" asp-area="Account"><i class="ico_friends"></i><span>@Localizer["Friends"]</span></a></li>
+                <li class="nav-list"><a asp-controller="Wallet" asp-action="Index" asp-area="Account"><i class="ico_wallet"></i><span>@Localizer["Wallet"]</span></a></li> 
+            }
+            <li class="uk-nav-header">Main</li>
+            <li class="nav-list"><a asp-controller="Store" asp-action="Index" asp-area="Main"><i class="ico_store"></i><span>@Localizer["Store"]</span></a></li>
+            <li class="nav-list"><a asp-controller="Market" asp-action="Index" asp-area="Main"><i class="ico_market"></i><span>@Localizer["Market"]</span></a></li>
+            <li class="nav-list"><a asp-controller="Stream" asp-action="Index" asp-area="Main"><i class="ico_streams"></i><span>@Localizer["Streams"]</span></a></li>
+            <li class="nav-list"><a asp-controller="Community" asp-action="Index" asp-area="Main"><i class="ico_community"></i><span>@Localizer["Community"]</span></a></li>
+            <li class="nav-list"><a asp-controller="Live" asp-action="Index" asp-area="Main"><i class="ico_community"></i><span>@Localizer["Live"]</span></a></li>
+            <li class="uk-nav-header">Support</li>
+            <li class="nav-list"><a href="#modal-report" data-uk-toggle><i class="ico_report"></i><span>@Localizer["Report"]</span></a></li>
+            <li class="nav-list"><a href="#modal-help" data-uk-toggle><i class="ico_help"></i><span>@Localizer["Help"]</span></a></li>
+        </ul>
+    </div>
+</aside>

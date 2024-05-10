@@ -1,0 +1,82 @@
+@using Microsoft.EntityFrameworkCore
+@using TeamHost.Application.Interfaces
+@using TeamHost.Domain.Entities
+@model TeamHost.Application.Contracts.Profile.EditProfile.EditProfileRequest
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject IDbContext dbContext
+
+@{
+    Layout = "_Layout";
+    var allCountriesFromDb = await dbContext.Countries
+        .Select(x => new { x.Name, x.Id })
+        .OrderBy(x => x.Name)
+        .ToListAsync();
+
+    var selectedListCoutries = new SelectList(allCountriesFromDb, nameof(Country.Id), nameof(Country.Name));
+}
+
+<div class="container">
+    <form id="profileForm" class="profile-form"
+          asp-action="EditProfile"
+          asp-area="Account"
+          asp-controller="Profile"
+          method="post"
+          enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="firstName" class="form-label">First Name</label>
+            <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                asp-for="FirstName"
+                class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                class="form-input"
+                asp-for="LastName"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="patronymic" class="form-label">Patronymic</label>
+            <input
+                type="text"
+                id="patronymic"
+                name="patronymic"
+                asp-for="Patronymic"
+                class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="birthday" class="form-label">Birthday</label>
+            <input
+                type="date"
+                id="birthday"
+                name="birthday"
+                asp-for="Birthday"
+                class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="about" class="form-label">About</label>
+            <textarea asp-for="About" id="about" name="about" class="form-textarea" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="profilePicture" class="form-label">Profile Picture</label>
+            <input
+                type="file"
+                asp-for="ProfileImage"
+                id="profilePicture"
+                name="ProfileImage"
+                class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="country" class="form-label">Country</label>
+            <select asp-for="Country" id="country" name="country" asp-items="selectedListCoutries" class="form-select">
+            </select>
+        </div>
+        <button type="submit" class="btn-save">Save</button>
+    </form>
+</div>

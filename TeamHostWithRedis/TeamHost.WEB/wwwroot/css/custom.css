@@ -1,0 +1,34 @@
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+    color: #333; /* Черный цвет для меток */
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+.btn-save {
+    padding: 10px 20px;
+    background-color: #f36c21; /* Оранжевый цвет для кнопки */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-save:hover {
+    background-color: #d6531e; /* Темно-оранжевый цвет при наведении */
+}
