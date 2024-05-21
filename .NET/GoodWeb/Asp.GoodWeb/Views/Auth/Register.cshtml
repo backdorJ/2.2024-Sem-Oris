@@ -1,0 +1,64 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model Asp.GoodWeb.Contracts.Contracts.Auth.Register.RegisterRequest
+
+
+@{
+    Layout = "_Layout";
+}
+
+<div>
+    <form id="form-register" asp-antiforgery="false">
+        <div>
+            <label>Email</label>
+            <input type="text" id="form-email-1">
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" id="form-password1">
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" id="form-password2">
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+@section Scripts
+{
+    <script>
+        let email = ""
+        let password = ""
+        let confirmPassword = ""
+        let username = ""
+        
+        document.getElementById('form-email-1').addEventListener('change', e => {
+            email = e.target.value
+        })
+
+        document.getElementById('form-password1').addEventListener('change', e => {
+            password = e.target.value
+        })
+
+        document.getElementById('form-password2').addEventListener('change', e => {
+            confirmPassword = e.target.value
+        })
+        
+        document.getElementById('form-register').addEventListener('submit', e => {
+            e.preventDefault();
+            
+            fetch('http://localhost:5091/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    username: username,
+                    email: email,
+                    password: password,
+                    confirmPassword: confirmPassword 
+                })
+            })
+        })
+    </script>
+}
